@@ -50,12 +50,13 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
       .nav-inner{
         max-width: var(--max); margin: 0 auto; padding: 14px 24px;
         display:flex; align-items:center; justify-content: space-between; gap: 16px;
+        position: relative;
       }
       .brand{ font-weight: 700; letter-spacing: 0.2px; color: var(--text); }
       .brand a{ color: var(--text); }
       .nav a{ color: rgba(59, 73, 83, 0.86); font-size: 14px; }
       .nav a:hover{ color: var(--text); text-decoration: none; }
-      .nav-links{ display:flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .nav-links{ display:flex; gap: 14px; flex-wrap: nowrap; justify-content: flex-end; }
       .pill{
         display:inline-flex; align-items:center; gap:10px;
         padding: 10px 12px;
@@ -150,6 +151,36 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
       }
       .small{ font-size: 13px; color: var(--muted2); }
       .nowrap{ white-space: nowrap; }
+
+      /* Mobile nav */
+      .nav-mobile{ display: none; }
+      .nav-mobile > summary{ list-style: none; cursor: pointer; }
+      .nav-mobile > summary::-webkit-details-marker{ display: none; }
+      .nav-mobile-panel{
+        position: absolute;
+        right: 0;
+        top: calc(100% + 10px);
+        width: min(320px, calc(100vw - 48px));
+        padding: 10px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: rgba(235, 244, 221, 0.92);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 18px 50px rgba(59, 73, 83, 0.22);
+      }
+      .nav-mobile-panel a{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        margin: 8px 0;
+      }
+
+      @media (max-width: 720px){
+        .nav-inner{ padding: 10px 16px; }
+        .nav-links{ display: none; }
+        .nav-mobile{ display: block; }
+        .nav-mobile-panel{ width: min(320px, calc(100vw - 32px)); }
+      }
     </style>
   </head>
   <body>
@@ -164,6 +195,17 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
           <a class="pill" href="/#contact">Contact</a>
           <a class="pill" href="/blog">Blog</a>
         </nav>
+        <details class="nav-mobile">
+          <summary class="pill" aria-label="Open menu">Menu</summary>
+          <nav class="nav-mobile-panel" aria-label="Primary navigation (mobile)">
+            <a class="pill" href="/#strengths">Strengths</a>
+            <a class="pill" href="/#experience">Experience</a>
+            <a class="pill" href="/#skills">Stack</a>
+            <a class="pill" href="/#credentials">Credentials</a>
+            <a class="pill" href="/#contact">Contact</a>
+            <a class="pill" href="/blog">Blog</a>
+          </nav>
+        </details>
       </div>
     </div>
 
@@ -173,5 +215,26 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         <div>© {new Date().getFullYear()} Mitchell Bauer. Built with Astro. Hosted on Cloudflare Pages.</div>
       </footer>
     </main>
+
+    <script is:inline>
+      // Close mobile menu after navigation + when clicking outside.
+      const mobileNav = document.querySelector('.nav-mobile');
+      if (mobileNav) {
+        mobileNav.querySelectorAll('a').forEach((a) => {
+          a.addEventListener('click', () => {
+            mobileNav.open = false;
+          });
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!mobileNav.open) return;
+          if (e.target instanceof Node && !mobileNav.contains(e.target)) mobileNav.open = false;
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') mobileNav.open = false;
+        });
+      }
+    </script>
   </body>
 </html>
