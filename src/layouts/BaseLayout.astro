@@ -56,12 +56,23 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         font-weight: 700;
         letter-spacing: 0.2px;
         color: var(--text);
-        font-size: clamp(20px, 4.5vw, 24px); /* ~150% larger than default on desktop */
+        font-size: clamp(28px, 3.5vw, 36px); /* balanced: solid on mobile, not huge on desktop */
         line-height: 1.1;
+        flex: 1 1 auto;
+        min-width: 0; /* allow ellipsis inside flex row */
       }
-      .brand a{ color: var(--text); }
-      .nav a{ color: rgba(59, 73, 83, 0.86); font-size: 14px; }
-      .nav a:hover{ color: var(--text); text-decoration: none; }
+      .brand a{
+        color: var(--text);
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      /* Default link styling for nav pills (NOT the brand link) */
+      .nav-links a,
+      .nav-mobile-panel a{ color: rgba(59, 73, 83, 0.86); font-size: 14px; }
+      .nav-links a:hover,
+      .nav-mobile-panel a:hover{ color: var(--text); text-decoration: none; }
       .nav-links{ display:flex; gap: 14px; flex-wrap: nowrap; justify-content: flex-end; }
       .pill{
         display:inline-flex; align-items:center; gap:10px;

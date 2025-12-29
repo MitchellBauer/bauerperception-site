@@ -19,11 +19,15 @@ npm install
 npm run dev
 ```
 
+Then open the site at `http://localhost:4321`.
+
 ## Build
 ```bash
 npm run build
 npm run preview
 ```
+
+Preview serves the production build locally. Open `http://localhost:4321`.
 
 ## Deploy to Cloudflare Pages
 - Framework preset: **Astro**
@@ -35,3 +39,4 @@ npm run preview
 - Main page: `src/pages/index.astro`
 - Blog stub: `src/pages/blog/index.astro`
 - Edit content in `src/site-data.json`
+- Project notes: `docs/PROJECT_NOTES.md`
