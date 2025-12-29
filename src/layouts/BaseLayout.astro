@@ -10,38 +10,41 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
     <title>{title}</title>
     <style>
       :root{
-        /* Deep forest night palette - earthy greens & ocean blues */
-        --bg: #0c1616;
-        --panel: rgba(45, 90, 80, 0.18);
-        --panel2: rgba(35, 75, 70, 0.12);
-        --text: #e8f0ec;
-        --muted: #a3bdb4;
-        --muted2: #7a9e94;
-        --line: rgba(100, 160, 140, 0.25);
-        --accent: #4fd1a5;
-        --accent2: #5eb8d9;
+        /* Light, earthy palette */
+        --bg: #EBF4DD;
+        --header: #90AB8B;
+        --element: #5A7863;
+        --text: #3B4953;
+
+        /* Derived tones (still based on the palette via alpha) */
+        --panel: rgba(144, 171, 139, 0.22);
+        --panel2: rgba(144, 171, 139, 0.14);
+        --muted: rgba(59, 73, 83, 0.82);
+        --muted2: rgba(59, 73, 83, 0.66);
+        --line: rgba(90, 120, 99, 0.28);
+        --link: var(--element);
         --max: 1024px;
         --radius: 18px;
-        --shadow: 0 20px 50px rgba(0,0,0,0.45);
+        --shadow: 0 20px 50px rgba(59, 73, 83, 0.18);
       }
       html { scroll-behavior: smooth; }
       body{
         margin:0;
         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-        background: radial-gradient(1200px 800px at 15% 5%, rgba(79,209,165,0.12), transparent 55%),
-                    radial-gradient(900px 700px at 90% 30%, rgba(94,184,217,0.1), transparent 50%),
-                    radial-gradient(600px 600px at 50% 80%, rgba(45,90,80,0.15), transparent 50%),
+        background: radial-gradient(1200px 800px at 15% 5%, rgba(144,171,139,0.35), transparent 55%),
+                    radial-gradient(900px 700px at 90% 30%, rgba(90,120,99,0.18), transparent 50%),
+                    radial-gradient(600px 600px at 50% 80%, rgba(144,171,139,0.22), transparent 50%),
                     var(--bg);
         color: var(--text);
         line-height: 1.55;
       }
-      a{ color: var(--accent); text-decoration: none; }
-      a:hover{ text-decoration: underline; text-decoration-color: var(--accent); }
+      a{ color: var(--link); text-decoration: none; }
+      a:hover{ text-decoration: underline; text-decoration-color: var(--link); }
       .wrap{ max-width: var(--max); margin: 0 auto; padding: 24px; }
       .nav{
         position: sticky; top: 0; z-index: 10;
         backdrop-filter: blur(12px);
-        background: rgba(12,22,22,0.8);
+        background: rgba(144, 171, 139, 0.78);
         border-bottom: 1px solid var(--line);
       }
       .nav-inner{
@@ -50,7 +53,7 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
       }
       .brand{ font-weight: 700; letter-spacing: 0.2px; color: var(--text); }
       .brand a{ color: var(--text); }
-      .nav a{ color: var(--muted); font-size: 14px; }
+      .nav a{ color: rgba(59, 73, 83, 0.86); font-size: 14px; }
       .nav a:hover{ color: var(--text); text-decoration: none; }
       .nav-links{ display:flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
       .pill{
@@ -58,12 +61,12 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         padding: 10px 12px;
         border: 1px solid var(--line);
         border-radius: 999px;
-        background: rgba(45,90,80,0.2);
+        background: rgba(235, 244, 221, 0.55);
         transition: all 0.2s ease;
       }
       .pill:hover{
-        background: rgba(79,209,165,0.15);
-        border-color: rgba(79,209,165,0.4);
+        background: rgba(235, 244, 221, 0.8);
+        border-color: rgba(90, 120, 99, 0.45);
       }
       .grid{ display:grid; gap: 18px; }
       .card{
@@ -84,26 +87,26 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         display:inline-flex; align-items:center; gap:10px;
         padding: 11px 16px;
         border-radius: 12px;
-        border: 1px solid rgba(94,184,217,0.5);
-        background: rgba(94,184,217,0.15);
-        color: var(--accent2);
+        border: 1px solid rgba(90, 120, 99, 0.55);
+        background: rgba(235, 244, 221, 0.65);
+        color: var(--element);
         font-weight: 500;
         transition: all 0.2s ease;
       }
       .btn:hover{
-        background: rgba(94,184,217,0.25);
-        border-color: var(--accent2);
+        background: rgba(235, 244, 221, 0.9);
+        border-color: rgba(90, 120, 99, 0.8);
         text-decoration: none;
         transform: translateY(-1px);
       }
       .btn.primary{
-        border-color: var(--accent);
-        background: rgba(79,209,165,0.2);
-        color: var(--accent);
+        border-color: rgba(90, 120, 99, 0.9);
+        background: rgba(90, 120, 99, 0.16);
+        color: var(--element);
       }
       .btn.primary:hover{
-        background: rgba(79,209,165,0.35);
-        box-shadow: 0 4px 20px rgba(79,209,165,0.25);
+        background: rgba(90, 120, 99, 0.22);
+        box-shadow: 0 4px 20px rgba(90, 120, 99, 0.22);
       }
       section{ padding: 22px 0; }
       .section-title{
@@ -115,7 +118,7 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
       .muted{ color: var(--muted); }
       ul{ margin: 10px 0 0; padding-left: 18px; }
       li{ margin: 6px 0; color: var(--muted); }
-      li::marker{ color: var(--accent); }
+      li::marker{ color: var(--element); }
       .kgrid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
       .kgrid > * { grid-column: span 12; }
       @media (min-width: 860px){
@@ -127,16 +130,16 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         display:inline-block;
         padding: 6px 10px;
         border-radius: 999px;
-        border: 1px solid rgba(79,209,165,0.3);
-        background: rgba(79,209,165,0.08);
+        border: 1px solid rgba(90, 120, 99, 0.28);
+        background: rgba(235, 244, 221, 0.55);
         color: var(--muted);
         font-size: 13px;
         margin: 6px 6px 0 0;
         transition: all 0.2s ease;
       }
       .tag:hover{
-        border-color: rgba(79,209,165,0.5);
-        background: rgba(79,209,165,0.15);
+        border-color: rgba(90, 120, 99, 0.5);
+        background: rgba(235, 244, 221, 0.85);
       }
       .footer{
         border-top: 1px solid var(--line);
