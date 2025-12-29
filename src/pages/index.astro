@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import data from "../site-data.json";
+const title = `${data.name} — ${data.title}`;
+const description = data.positioning;
+---
+<BaseLayout {title} {description}>
+  <header class="hero">
+    <h1>{data.name}</h1>
+    <h2>{data.title} <span class="small">· {data.location}</span></h2>
+    <p>{data.positioning}</p>
+
+    <div class="cta" role="list" aria-label="Primary links">
+      <a class="btn primary" role="listitem" href={`mailto:${data.email}`}>Email</a>
+      <a class="btn" role="listitem" href={data.links.LinkedIn} rel="me noopener noreferrer" target="_blank">LinkedIn</a>
+      <a class="btn" role="listitem" href={data.links.GitHub} rel="noopener noreferrer" target="_blank">GitHub</a>
+      <span class="btn" aria-label="Phone">{data.phone}</span>
+    </div>
+  </header>
+
+  <section id="strengths">
+    <div class="section-title">
+      <h3>Core strengths</h3>
+      <span>Scope + outcomes, not buzzwords</span>
+    </div>
+    <div class="card">
+      <div class="kgrid">
+        <div class="span8">
+          <p class="muted" style="margin:0;">
+            I run end-to-end IT for a multi-site manufacturing environment: identity, endpoints, M365, networking, security, and DR.
+            I focus on predictable operations—cost down, uptime up, risk down.
+          </p>
+          <ul>
+            {data.highlights.map((h) => <li>{h}</li>)}
+          </ul>
+        </div>
+        <div class="span4">
+          <div class="small">Fast facts</div>
+          <div class="tag">~50 users</div>
+          <div class="tag">Multi-site manufacturing</div>
+          <div class="tag">M365 + Entra ID</div>
+          <div class="tag">Intune / Endpoint Manager</div>
+          <div class="tag">Veeam + Synology</div>
+          <div class="tag">VPN / site connectivity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-title">
+      <h3>Experience</h3>
+      <span>What I own, what changed, what improved</span>
+    </div>
+
+    <div class="grid">
+      {data.experience.map((job) => (
+        <article class="card">
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;">
+            <div>
+              <div style="font-weight:700;">{job.company}</div>
+              <div class="muted">{job.role} · {job.location}</div>
+            </div>
+            <div class="muted nowrap">{job.dates}</div>
+          </div>
+          <p class="muted" style="margin:10px 0 0;">{job.summary}</p>
+          <ul>
+            {job.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">
+      <h3>Stack</h3>
+      <span>Curated for how I operate</span>
+    </div>
+
+    <div class="kgrid">
+      {data.coreDomains.map((d) => (
+        <div class="card span6">
+          <div style="font-weight:700; margin-bottom:6px;">{d.label}</div>
+          <div>
+            {d.items.map((i) => <span class="tag">{i}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="section-title">
+      <h3>Education & certifications</h3>
+      <span>Proof of baseline + follow-through</span>
+    </div>
+
+    <div class="kgrid">
+      <div class="card span6">
+        <div style="font-weight:700; margin-bottom:6px;">Education</div>
+        {data.education.map((e) => (
+          <div style="margin-top:8px;">
+            <div class="muted"><strong style="color:var(--text); font-weight:650;">{e.program}</strong></div>
+            <div class="small">{e.school} · {e.year}</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="card span6">
+        <div style="font-weight:700; margin-bottom:6px;">Certifications</div>
+        <div>
+          {data.certifications.map((c) => <span class="tag">{c}</span>)}
+        </div>
+        <div class="small" style="margin-top:10px;">(Older roles prior to 2015 are available on LinkedIn.)</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h3>Contact</h3>
+      <span>Recruiters: email is best</span>
+    </div>
+    <div class="card">
+      <div class="kgrid">
+        <div class="span8">
+          <p class="muted" style="margin:0 0 10px;">
+            If you’re hiring for IT leadership in a Microsoft 365 / Entra / Intune environment—especially where “hands-on” and “strategic” are both required—reach out.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href={`mailto:${data.email}`}>{data.email}</a>
+            <a class="btn" href={data.links.LinkedIn} rel="me noopener noreferrer" target="_blank">Message on LinkedIn</a>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="small">Location</div>
+          <div class="muted">{data.location}</div>
+          <div style="height:10px;"></div>
+          <div class="small">Phone</div>
+          <div class="muted">{data.phone}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

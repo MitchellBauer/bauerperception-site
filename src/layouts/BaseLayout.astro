@@ -1,0 +1,146 @@
+---
+const { title = "Mitchell Bauer — IT Manager", description = "IT Manager delivering secure, cloud-first operations across multi-site manufacturing environments." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <style>
+      :root{
+        --bg: #0b1020;
+        --panel: rgba(255,255,255,0.06);
+        --panel2: rgba(255,255,255,0.04);
+        --text: rgba(255,255,255,0.92);
+        --muted: rgba(255,255,255,0.68);
+        --muted2: rgba(255,255,255,0.52);
+        --line: rgba(255,255,255,0.12);
+        --accent: #7dd3fc;
+        --accent2: #a78bfa;
+        --max: 1024px;
+        --radius: 18px;
+        --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      }
+      html { scroll-behavior: smooth; }
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 20% 10%, rgba(125,211,252,0.15), transparent 60%),
+                    radial-gradient(900px 600px at 85% 25%, rgba(167,139,250,0.12), transparent 55%),
+                    var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+      a{ color: inherit; text-decoration: none; }
+      a:hover{ text-decoration: underline; text-decoration-color: rgba(125,211,252,0.7); }
+      .wrap{ max-width: var(--max); margin: 0 auto; padding: 24px; }
+      .nav{
+        position: sticky; top: 0; z-index: 10;
+        backdrop-filter: blur(10px);
+        background: rgba(11,16,32,0.65);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner{
+        max-width: var(--max); margin: 0 auto; padding: 14px 24px;
+        display:flex; align-items:center; justify-content: space-between; gap: 16px;
+      }
+      .brand{ font-weight: 700; letter-spacing: 0.2px; }
+      .nav a{ color: var(--muted); font-size: 14px; }
+      .nav a:hover{ color: var(--text); text-decoration: none; }
+      .nav-links{ display:flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .pill{
+        display:inline-flex; align-items:center; gap:10px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.03);
+      }
+      .grid{ display:grid; gap: 18px; }
+      .card{
+        background: linear-gradient(180deg, var(--panel), var(--panel2));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .hero{
+        padding: 36px 0 10px;
+      }
+      .hero h1{ margin: 0 0 10px; font-size: clamp(32px, 5vw, 44px); letter-spacing: -0.8px; }
+      .hero h2{ margin: 0 0 14px; font-size: 16px; font-weight: 600; color: var(--muted); }
+      .hero p{ margin: 0; color: var(--muted); font-size: 16px; max-width: 80ch; }
+      .cta{ margin-top: 18px; display:flex; gap: 10px; flex-wrap: wrap; }
+      .btn{
+        display:inline-flex; align-items:center; gap:10px;
+        padding: 11px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.04);
+      }
+      .btn.primary{
+        border-color: rgba(125,211,252,0.35);
+        background: rgba(125,211,252,0.12);
+      }
+      section{ padding: 22px 0; }
+      .section-title{
+        display:flex; align-items: baseline; justify-content: space-between; gap: 12px;
+        margin: 0 0 12px;
+      }
+      .section-title h3{ margin:0; font-size: 18px; letter-spacing: -0.2px; }
+      .section-title span{ color: var(--muted2); font-size: 13px; }
+      .muted{ color: var(--muted); }
+      ul{ margin: 10px 0 0; padding-left: 18px; }
+      li{ margin: 6px 0; color: var(--muted); }
+      .kgrid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+      .kgrid > * { grid-column: span 12; }
+      @media (min-width: 860px){
+        .kgrid > .span6 { grid-column: span 6; }
+        .kgrid > .span4 { grid-column: span 4; }
+        .kgrid > .span8 { grid-column: span 8; }
+      }
+      .tag{
+        display:inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+        color: var(--muted);
+        font-size: 13px;
+        margin: 6px 6px 0 0;
+      }
+      .footer{
+        border-top: 1px solid var(--line);
+        margin-top: 24px;
+        padding: 18px 0 30px;
+        color: var(--muted2);
+        font-size: 13px;
+      }
+      .small{ font-size: 13px; color: var(--muted2); }
+      .nowrap{ white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav-inner">
+        <div class="brand"><a href="/" aria-label="Home">bauerperception</a></div>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="pill" href="/#strengths">Strengths</a>
+          <a class="pill" href="/#experience">Experience</a>
+          <a class="pill" href="/#skills">Stack</a>
+          <a class="pill" href="/#credentials">Credentials</a>
+          <a class="pill" href="/#contact">Contact</a>
+          <a class="pill" href="/blog">Blog</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <slot />
+      <footer class="footer">
+        <div>© {new Date().getFullYear()} Mitchell Bauer. Built with Astro. Hosted on Cloudflare Pages.</div>
+      </footer>
+    </main>
+  </body>
+</html>

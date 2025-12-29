@@ -1,0 +1,136 @@
+{
+  "name": "Mitchell Bauer",
+  "location": "Newberg, OR",
+  "email": "mitchell@bauerperception.com",
+  "phone": "503-875-3626",
+  "links": {
+    "LinkedIn": "https://linkedin.com/in/mitchelljbauer",
+    "GitHub": "https://github.com/mitchellbauer"
+  },
+  "title": "IT Manager",
+  "positioning": "IT Manager delivering secure, cloud-first operations across multi-site manufacturing environments, with full ownership of Microsoft 365, identity, endpoints, networking, and security.",
+  "highlights": [
+    "Own Microsoft 365 (Exchange Online, SharePoint/OneDrive, Teams) and Entra ID for identity, MFA/Conditional Access, and access controls.",
+    "Manage Windows + macOS endpoints with Intune/Endpoint Manager: baselines, update rings, encryption, compliance policies.",
+    "Lead infrastructure changes with minimal downtime (office move, cutovers, device provisioning, remote work enablement).",
+    "Run backup/DR with Veeam to Synology NAS plus offsite replication; routine restore checks and documented RPO/RTO.",
+    "Reduce spend and risk through vendor management, renewals, and pragmatic security standards."
+  ],
+  "coreDomains": [
+    {
+      "label": "Identity & Access",
+      "items": [
+        "Entra ID/Azure AD",
+        "SSO/MFA",
+        "Conditional Access",
+        "Access reviews & least privilege"
+      ]
+    },
+    {
+      "label": "Endpoints",
+      "items": [
+        "Intune/Endpoint Manager",
+        "Windows/macOS baselines",
+        "Update rings",
+        "Encryption & compliance"
+      ]
+    },
+    {
+      "label": "Microsoft 365",
+      "items": [
+        "Exchange Online",
+        "SharePoint/OneDrive",
+        "Teams governance"
+      ]
+    },
+    {
+      "label": "Networking & Remote",
+      "items": [
+        "VPN/site connectivity",
+        "Wi\u2011Fi",
+        "barcode/warehouse infrastructure"
+      ]
+    },
+    {
+      "label": "Security & DR",
+      "items": [
+        "AV/EDR",
+        "patch cadence",
+        "incident response",
+        "backup/restore readiness"
+      ]
+    },
+    {
+      "label": "SaaS Lifecycle",
+      "items": [
+        "onboarding/offboarding",
+        "license optimization",
+        "SCIM-style provisioning mindset"
+      ]
+    },
+    {
+      "label": "Vendors & Budget",
+      "items": [
+        "renewals/contracts",
+        "cost optimization",
+        "roadmap planning"
+      ]
+    },
+    {
+      "label": "Automation & Tooling",
+      "items": [
+        "PowerShell/VBA",
+        "Python",
+        "SQL",
+        "JavaScript (support tooling)"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Trimac Panel Products",
+      "role": "IT Manager",
+      "location": "Tigard, OR",
+      "dates": "09/2019 \u2013 Present",
+      "summary": "Own day-to-day IT operations, security, and roadmap for a ~50-user, multi-site manufacturing environment.",
+      "bullets": [
+        "Operate Microsoft 365 (Exchange Online, SharePoint/OneDrive, Teams) and Entra ID for identity, SSO/MFA, and access controls; maintain joiner/mover/leaver workflows.",
+        "Manage Windows and macOS endpoints with Intune/Endpoint Manager (baselines, update rings, device encryption, compliance policies).",
+        "Planned and executed office HQ relocation and plant consolidation with minimal disruption (network cutover, server moves, print/label systems, end-user readiness).",
+        "Transitioned from copper PBX to VoIP; reduced telephony spend by ~$6,000/year and standardized call flows and remote extensions.",
+        "Directed ERP modernization (Macola \u2192 QuickBooks Enterprise + Fishbowl): data/report migration (Crystal), wireless/barcode infrastructure, handheld scanning, and integrations.",
+        "Administer backup and recovery using Veeam to Synology NAS with offsite replication; perform routine restore checks and document RPO/RTO.",
+        "Oversee security tooling (AV/EDR, encryption, patching cadence), access reviews, and incident handling procedures.",
+        "Own vendor management and annual IT budget; renew contracts, evaluate alternatives, and track license utilization."
+      ]
+    },
+    {
+      "company": "ASH Fabrications, LLC",
+      "role": "Lead Estimator & IT Manager",
+      "location": "Portland, OR",
+      "dates": "12/2015 \u2013 04/2019",
+      "summary": "Dual role across two businesses (~40 staff): IT ownership, operations support, and estimating.",
+      "bullets": [
+        "Implemented Jive VoIP; reduced ongoing telephony costs by ~$7,000/year and improved remote access to phone services.",
+        "Established and maintained OpenVPN for secure remote access; standardized user/device policies and key rotation.",
+        "Automated business metrics and reporting via Google Apps Script dashboards; reduced manual reporting time from hours to minutes.",
+        "Authored SOPs and training for core systems; improved onboarding consistency and reduced time-to-productivity."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "program": "B.S., Software Development",
+      "school": "Western Governors University",
+      "year": "2021"
+    }
+  ],
+  "certifications": [
+    "CompTIA A+",
+    "CompTIA Project+",
+    "ITIL Foundation",
+    "CIW Advanced HTML5 & CSS3",
+    "CIW User Interface Design",
+    "Microsoft Database Fundamentals (98-364, legacy/retired)"
+  ]
+}
