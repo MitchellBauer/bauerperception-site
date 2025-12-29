@@ -52,7 +52,13 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         display:flex; align-items:center; justify-content: space-between; gap: 16px;
         position: relative;
       }
-      .brand{ font-weight: 700; letter-spacing: 0.2px; color: var(--text); }
+      .brand{
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        color: var(--text);
+        font-size: clamp(20px, 4.5vw, 24px); /* ~150% larger than default on desktop */
+        line-height: 1.1;
+      }
       .brand a{ color: var(--text); }
       .nav a{ color: rgba(59, 73, 83, 0.86); font-size: 14px; }
       .nav a:hover{ color: var(--text); text-decoration: none; }
@@ -156,6 +162,22 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
       .nav-mobile{ display: none; }
       .nav-mobile > summary{ list-style: none; cursor: pointer; }
       .nav-mobile > summary::-webkit-details-marker{ display: none; }
+      .sr-only{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .hamburger{
+        width: 18px;
+        height: 18px;
+        flex: 0 0 auto;
+      }
       .nav-mobile-panel{
         position: absolute;
         right: 0;
@@ -196,7 +218,12 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
           <a class="pill" href="/blog">Blog</a>
         </nav>
         <details class="nav-mobile">
-          <summary class="pill" aria-label="Open menu">Menu</summary>
+          <summary class="pill" aria-label="Open menu">
+            <span class="sr-only">Open menu</span>
+            <svg class="hamburger" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 6.5h16M4 12h16M4 17.5h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </summary>
           <nav class="nav-mobile-panel" aria-label="Primary navigation (mobile)">
             <a class="pill" href="/#strengths">Strengths</a>
             <a class="pill" href="/#experience">Experience</a>
