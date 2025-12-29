@@ -10,43 +10,46 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
     <title>{title}</title>
     <style>
       :root{
-        --bg: #0b1020;
-        --panel: rgba(255,255,255,0.06);
-        --panel2: rgba(255,255,255,0.04);
-        --text: rgba(255,255,255,0.92);
-        --muted: rgba(255,255,255,0.68);
-        --muted2: rgba(255,255,255,0.52);
-        --line: rgba(255,255,255,0.12);
-        --accent: #7dd3fc;
-        --accent2: #a78bfa;
+        /* Deep forest night palette - earthy greens & ocean blues */
+        --bg: #0c1616;
+        --panel: rgba(45, 90, 80, 0.18);
+        --panel2: rgba(35, 75, 70, 0.12);
+        --text: #e8f0ec;
+        --muted: #a3bdb4;
+        --muted2: #7a9e94;
+        --line: rgba(100, 160, 140, 0.25);
+        --accent: #4fd1a5;
+        --accent2: #5eb8d9;
         --max: 1024px;
         --radius: 18px;
-        --shadow: 0 20px 50px rgba(0,0,0,0.35);
+        --shadow: 0 20px 50px rgba(0,0,0,0.45);
       }
       html { scroll-behavior: smooth; }
       body{
         margin:0;
         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-        background: radial-gradient(1200px 800px at 20% 10%, rgba(125,211,252,0.15), transparent 60%),
-                    radial-gradient(900px 600px at 85% 25%, rgba(167,139,250,0.12), transparent 55%),
+        background: radial-gradient(1200px 800px at 15% 5%, rgba(79,209,165,0.12), transparent 55%),
+                    radial-gradient(900px 700px at 90% 30%, rgba(94,184,217,0.1), transparent 50%),
+                    radial-gradient(600px 600px at 50% 80%, rgba(45,90,80,0.15), transparent 50%),
                     var(--bg);
         color: var(--text);
         line-height: 1.55;
       }
-      a{ color: inherit; text-decoration: none; }
-      a:hover{ text-decoration: underline; text-decoration-color: rgba(125,211,252,0.7); }
+      a{ color: var(--accent); text-decoration: none; }
+      a:hover{ text-decoration: underline; text-decoration-color: var(--accent); }
       .wrap{ max-width: var(--max); margin: 0 auto; padding: 24px; }
       .nav{
         position: sticky; top: 0; z-index: 10;
-        backdrop-filter: blur(10px);
-        background: rgba(11,16,32,0.65);
+        backdrop-filter: blur(12px);
+        background: rgba(12,22,22,0.8);
         border-bottom: 1px solid var(--line);
       }
       .nav-inner{
         max-width: var(--max); margin: 0 auto; padding: 14px 24px;
         display:flex; align-items:center; justify-content: space-between; gap: 16px;
       }
-      .brand{ font-weight: 700; letter-spacing: 0.2px; }
+      .brand{ font-weight: 700; letter-spacing: 0.2px; color: var(--text); }
+      .brand a{ color: var(--text); }
       .nav a{ color: var(--muted); font-size: 14px; }
       .nav a:hover{ color: var(--text); text-decoration: none; }
       .nav-links{ display:flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
@@ -55,7 +58,12 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         padding: 10px 12px;
         border: 1px solid var(--line);
         border-radius: 999px;
-        background: rgba(255,255,255,0.03);
+        background: rgba(45,90,80,0.2);
+        transition: all 0.2s ease;
+      }
+      .pill:hover{
+        background: rgba(79,209,165,0.15);
+        border-color: rgba(79,209,165,0.4);
       }
       .grid{ display:grid; gap: 18px; }
       .card{
@@ -74,14 +82,28 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
       .cta{ margin-top: 18px; display:flex; gap: 10px; flex-wrap: wrap; }
       .btn{
         display:inline-flex; align-items:center; gap:10px;
-        padding: 11px 14px;
+        padding: 11px 16px;
         border-radius: 12px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(94,184,217,0.5);
+        background: rgba(94,184,217,0.15);
+        color: var(--accent2);
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+      .btn:hover{
+        background: rgba(94,184,217,0.25);
+        border-color: var(--accent2);
+        text-decoration: none;
+        transform: translateY(-1px);
       }
       .btn.primary{
-        border-color: rgba(125,211,252,0.35);
-        background: rgba(125,211,252,0.12);
+        border-color: var(--accent);
+        background: rgba(79,209,165,0.2);
+        color: var(--accent);
+      }
+      .btn.primary:hover{
+        background: rgba(79,209,165,0.35);
+        box-shadow: 0 4px 20px rgba(79,209,165,0.25);
       }
       section{ padding: 22px 0; }
       .section-title{
@@ -93,6 +115,7 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
       .muted{ color: var(--muted); }
       ul{ margin: 10px 0 0; padding-left: 18px; }
       li{ margin: 6px 0; color: var(--muted); }
+      li::marker{ color: var(--accent); }
       .kgrid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
       .kgrid > * { grid-column: span 12; }
       @media (min-width: 860px){
@@ -104,11 +127,16 @@ const { title = "Mitchell Bauer — IT Manager", description = "IT Manager deliv
         display:inline-block;
         padding: 6px 10px;
         border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(79,209,165,0.3);
+        background: rgba(79,209,165,0.08);
         color: var(--muted);
         font-size: 13px;
         margin: 6px 6px 0 0;
+        transition: all 0.2s ease;
+      }
+      .tag:hover{
+        border-color: rgba(79,209,165,0.5);
+        background: rgba(79,209,165,0.15);
       }
       .footer{
         border-top: 1px solid var(--line);

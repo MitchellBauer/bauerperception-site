@@ -12,7 +12,7 @@
     "Own Microsoft 365 (Exchange Online, SharePoint/OneDrive, Teams) and Entra ID for identity, MFA/Conditional Access, and access controls.",
     "Manage Windows + macOS endpoints with Intune/Endpoint Manager: baselines, update rings, encryption, compliance policies.",
     "Lead infrastructure changes with minimal downtime (office move, cutovers, device provisioning, remote work enablement).",
-    "Run backup/DR with Veeam to Synology NAS plus offsite replication; routine restore checks and documented RPO/RTO.",
+    "Run backup/DR with Veeam to Synology NAS plus offsite replication, including routine restore checks and documented RPO/RTO.",
     "Reduce spend and risk through vendor management, renewals, and pragmatic security standards."
   ],
   "coreDomains": [
@@ -45,34 +45,34 @@
     {
       "label": "Networking & Remote",
       "items": [
-        "VPN/site connectivity",
-        "Wi\u2011Fi",
-        "barcode/warehouse infrastructure"
+        "VPN / Site connectivity",
+        "Wi-Fi",
+        "Barcode / Warehouse infrastructure"
       ]
     },
     {
       "label": "Security & DR",
       "items": [
-        "AV/EDR",
-        "patch cadence",
-        "incident response",
-        "backup/restore readiness"
+        "AV / EDR",
+        "Patch cadence",
+        "Incident response",
+        "Backup / Restore readiness"
       ]
     },
     {
       "label": "SaaS Lifecycle",
       "items": [
-        "onboarding/offboarding",
-        "license optimization",
+        "Onboarding / Offboarding",
+        "License optimization",
         "SCIM-style provisioning mindset"
       ]
     },
     {
       "label": "Vendors & Budget",
       "items": [
-        "renewals/contracts",
-        "cost optimization",
-        "roadmap planning"
+        "Renewals / Contracts",
+        "Cost optimization",
+        "Roadmap planning"
       ]
     },
     {
