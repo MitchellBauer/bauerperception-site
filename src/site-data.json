@@ -6,14 +6,14 @@
     "LinkedIn": "https://linkedin.com/in/mitchelljbauer",
     "GitHub": "https://github.com/mitchellbauer"
   },
-  "title": "IT Manager",
-  "positioning": "IT Manager delivering secure, cloud-first operations across multi-site manufacturing environments, with full ownership of Microsoft 365, identity, endpoints, networking, and security.",
+  "title": "IT Director",
+  "positioning": "IT Director with 6+ years leading $150k+ annual budgets and ERP systems for ~50 staff across multi-site manufacturing. Specializes in vendor orchestration, zero-trust security, and cost optimization while maintaining 99.9% uptime.",
   "highlights": [
-    "Own Microsoft 365 (Exchange Online, SharePoint/OneDrive, Teams) and Entra ID for identity, MFA/Conditional Access, and access controls.",
-    "Manage Windows + macOS endpoints with Intune/Endpoint Manager: baselines, update rings, encryption, compliance policies.",
-    "Lead infrastructure changes with minimal downtime (office move, cutovers, device provisioning, remote work enablement).",
-    "Run backup/DR with Veeam to Synology NAS plus offsite replication, including routine restore checks and documented RPO/RTO.",
-    "Reduce spend and risk through vendor management, renewals, and pragmatic security standards."
+    "Govern a $150k+ annual IT budget, optimize renewals, and reduce OpEx through vendor management and contract negotiation.",
+    "Direct ERP modernization (Macola \u2192 QuickBooks Enterprise + Fishbowl) and warehouse/labeling systems with MSP accountability.",
+    "Enforce Zero Trust with Entra ID, Conditional Access, Intune, and automated patching for 100% endpoint compliance.",
+    "Administer Veeam \u2192 Synology backup/DR with offsite replication and routine restore validation.",
+    "Modernize telephony with VoIP (RingCentral / GoToConnect), saving ~$6,000/year and standardizing call flows."
   ],
   "coreDomains": [
     {
@@ -28,10 +28,10 @@
     {
       "label": "Endpoints",
       "items": [
-        "Intune/Endpoint Manager",
-        "Windows/macOS baselines",
-        "Update rings",
-        "Encryption & compliance"
+        "Endpoint administration",
+        "Windows baselines",
+        "Patch management",
+        "Device encryption/compliance"
       ]
     },
     {
@@ -45,62 +45,76 @@
     {
       "label": "Networking & Remote",
       "items": [
-        "VPN / Site connectivity",
-        "Wi-Fi",
-        "Barcode / Warehouse infrastructure"
+        "Fortinet firewalls/VPN",
+        "Site connectivity",
+        "HPE Instant On Wi-Fi",
+        "Barcode infrastructure"
       ]
     },
     {
       "label": "Security & DR",
       "items": [
-        "AV / EDR",
+        "AV/EDR",
+        "Disk encryption",
         "Patch cadence",
         "Incident response",
-        "Backup / Restore readiness"
+        "Backup/DR (Veeam/Synology)"
       ]
     },
     {
       "label": "SaaS Lifecycle",
       "items": [
-        "Onboarding / Offboarding",
+        "Onboarding/offboarding",
         "License optimization",
-        "SCIM-style provisioning mindset"
+        "SCIM-style provisioning"
       ]
     },
     {
       "label": "Vendors & Budget",
       "items": [
-        "Renewals / Contracts",
+        "Renewals",
         "Cost optimization",
-        "Roadmap planning"
+        "Contracts"
       ]
     },
     {
-      "label": "Automation & Tooling",
+      "label": "Projects & Service",
       "items": [
-        "PowerShell/VBA",
+        "Migrations",
+        "Office moves",
+        "ERP/labeling systems",
+        "SLA management",
+        "Knowledge base/self-service",
+        "Automation"
+      ]
+    },
+    {
+      "label": "Programming",
+      "items": [
         "Python",
+        "PowerShell/VBA",
         "SQL",
-        "JavaScript (support tooling)"
+        "C#",
+        "Java",
+        "HTML5/CSS3/JavaScript"
       ]
     }
   ],
   "experience": [
     {
       "company": "Trimac Panel Products",
-      "role": "IT Manager",
+      "role": "IT Director",
       "location": "Tigard, OR",
       "dates": "09/2019 \u2013 Present",
-      "summary": "Own day-to-day IT operations, security, and roadmap for a ~50-user, multi-site manufacturing environment.",
+      "summary": "Direct technology strategy, security, and operations for a multi-site manufacturing environment; own Microsoft 365, endpoint management, ERP, and vendor lifecycle.",
       "bullets": [
-        "Operate Microsoft 365 (Exchange Online, SharePoint/OneDrive, Teams) and Entra ID for identity, SSO/MFA, and access controls; maintain joiner/mover/leaver workflows.",
-        "Manage Windows and macOS endpoints with Intune/Endpoint Manager (baselines, update rings, device encryption, compliance policies).",
-        "Planned and executed office HQ relocation and plant consolidation with minimal disruption (network cutover, server moves, print/label systems, end-user readiness).",
-        "Transitioned from copper PBX to VoIP; reduced telephony spend by ~$6,000/year and standardized call flows and remote extensions.",
-        "Directed ERP modernization (Macola \u2192 QuickBooks Enterprise + Fishbowl): data/report migration (Crystal), wireless/barcode infrastructure, handheld scanning, and integrations.",
-        "Administer backup and recovery using Veeam to Synology NAS with offsite replication; perform routine restore checks and document RPO/RTO.",
-        "Oversee security tooling (AV/EDR, encryption, patching cadence), access reviews, and incident handling procedures.",
-        "Own vendor management and annual IT budget; renew contracts, evaluate alternatives, and track license utilization."
+        "Govern a $150k+ annual IT budget; negotiate contracts with ISPs, hardware, and SaaS vendors to reduce OpEx while maintaining 99.9% uptime.",
+        "Directed ERP modernization (Macola \u2192 QuickBooks Enterprise + Fishbowl) and WMS implementation; manage MSP relationship for cloud-hosted ERP (Attivo).",
+        "Designed and enforced Zero Trust using Entra ID, Conditional Access, and Intune; achieved 100% endpoint compliance with automated patching, AV/EDR, and BitLocker.",
+        "Administer backup and DR via Veeam to Synology NAS with offsite replication; perform routine restore checks to validate RPO/RTO.",
+        "Directed external web agencies on a full-stack website redesign with defined scope, deliverables, and launch timelines.",
+        "Transitioned from copper PBX to VoIP (RingCentral / GoToConnect), reducing telephony spend by ~$6,000/year.",
+        "Established structured IT service delivery with SLAs, internal knowledge base, Teams governance, and secure VPN provisioning."
       ]
     },
     {
@@ -110,10 +124,10 @@
       "dates": "12/2015 \u2013 04/2019",
       "summary": "Dual role across two businesses (~40 staff): IT ownership, operations support, and estimating.",
       "bullets": [
-        "Implemented Jive VoIP; reduced ongoing telephony costs by ~$7,000/year and improved remote access to phone services.",
-        "Established and maintained OpenVPN for secure remote access; standardized user/device policies and key rotation.",
-        "Automated business metrics and reporting via Google Apps Script dashboards; reduced manual reporting time from hours to minutes.",
-        "Authored SOPs and training for core systems; improved onboarding consistency and reduced time-to-productivity."
+        "Implemented Jive VoIP, reducing ongoing telephony costs by ~$7,000/year and improving remote access reliability.",
+        "Established and maintained OpenVPN for secure remote access; standardized user device policies and key rotation protocols.",
+        "Automated business metrics and reporting via Google Apps Script dashboards, cutting manual reporting time from hours to minutes.",
+        "Authored SOPs and training documentation for core systems, improving onboarding consistency and time-to-productivity."
       ]
     }
   ],
@@ -125,11 +139,11 @@
     }
   ],
   "certifications": [
-    "CompTIA A+",
     "CompTIA Project+",
+    "CompTIA A+",
     "ITIL Foundation",
     "CIW Advanced HTML5 & CSS3",
     "CIW User Interface Design",
-    "Microsoft Database Fundamentals (98-364, legacy/retired)"
+    "Microsoft Database Fundamentals (98-364)"
   ]
 }
